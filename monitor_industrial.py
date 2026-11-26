@@ -32,7 +32,7 @@ def obter_leituras_validas(lista_motores):
     return [m for m in lista_motores if validar_leitura(m)]
 
     def analisar_alertas(motor):
-    alertas = []
+        alertas = []
     if motor["temperatura"] > LIMITES["temperatura_max"]:
         alertas.append(f"Superaquecimento ({motor['temperatura']:.1f} C)")
     if motor["corrente"] > LIMITES["corrente_max"]:
@@ -51,8 +51,8 @@ def obter_leituras_validas(lista_motores):
 
     return status, alertas
 
-     def calcular_estatisticas(motores):
-    total = len(motores)
+    def calcular_estatisticas(motores):
+        total = len(motores)
     if total == 0:
         return {}
 
@@ -70,10 +70,10 @@ def obter_leituras_validas(lista_motores):
     }
 
     def exibir_painel(motores):
-    print("=" * 64)
-    print(f"{SISTEMA_NOME} - v{VERSAO}")
-    print(f"Data/Hora da leitura: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
-    print("=" * 64)
+        print("=" * 64)
+        print(f"{SISTEMA_NOME} - v{VERSAO}")
+        print(f"Data/Hora da leitura: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+        print("=" * 64)
 
     for motor in motores:
         status, alertas = analisar_alertas(motor)
